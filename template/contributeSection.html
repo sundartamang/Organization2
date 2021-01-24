@@ -1,0 +1,17 @@
+{% load staticfiles %}
+<div class="contribute_section px-5">
+    <div class="">
+        <h1 class="text-center font-weight-bold">How can you help us ?</h1>
+        <p class="text-center font-weight-bold mt-4">Empowerment, Education, Care, and Support</p>
+    </div>
+    <div class="d-flex justify-content-center mt-5">
+        <a href="{% url 'core:contribute' %}">
+            <button class="btn btn-default px-4 py-4 px-5 font-weight-bold">Donate us</button>
+        </a>
+        <p class="m-3"></p>
+        <a href="{% url 'core:contact-us' %}">
+            <button class="btn px-4 py-4 px-5 font-weight-bold">Join us</button>
+        </a>
+    </div>
+
+</div>

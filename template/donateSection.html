@@ -1,0 +1,11 @@
+{% load staticfiles %}
+<div class="donate_section_wrapper p-5" style="background-image: url('{% static 'img/Dotted-background.jpg' %}')">
+    <h2 class="text-center justify-content-center align-self-center font-weight-bold">
+        Helping hands are better than praying lips
+    </h2>
+    <div class="d-flex justify-content-center">
+        <a href="{% url 'core:contribute' %}">
+            <button class="btn btn-default px-4 py-5 mt-2 font-weight-bold">Donate us</button>
+        </a>
+    </div>
+</div>

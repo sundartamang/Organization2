@@ -1,0 +1,580 @@
+/* Nav / Navbar Styles
+===================================*/
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* carasoul section */
+.carasoul h2,
+h3 {
+    font-family: 'Coiny', cursive;
+}
+
+
+.header .carousel-inner .item {
+    height: 100vh;
+}
+
+.carousel-caption {
+    padding-bottom: 180px;
+}
+
+.carousel-caption h2 {
+    text-transform: uppercase;
+    font-size: 50px;
+}
+
+.animate__animated .animate__bounceInRight {
+    --animate-duration: 2s;
+    transition-duration: 1s;
+}
+
+.btn-donate {
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+    border: 2px solid #3489db;
+    text-decoration: none;
+    background: #3489db;
+    color: #fff;
+}
+
+.btn-donate:hover {
+    color: #fff;
+    transition: 0.5s;
+    background-color: #347bdb;
+}
+
+/* Carasoul section end */
+
+.navbar {
+    background: #ffffff !important;
+    border-bottom: none;
+    padding: 30px 0;
+    transition-duration: 0.6s;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a {
+    color: #183532;
+}
+
+/* jQuery Styles
+===================================*/
+
+.navbar-scroll {
+    background: #ffffff !important;
+    padding: 0px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    transition-duration: 0.6s;
+    color: #565387 !important;
+}
+
+.nav-dropdown-scroll {
+    background: #e7eaea;
+    box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.4);
+    color: #565387 !important;
+}
+
+.navbar .nav-item .dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+    margin-top: 0;
+}
+
+.navbar .nav-item .nav-link {
+    text-transform: uppercase;
+}
+
+.navbar .nav-item:hover .nav-link {
+    color: #3489db !important;
+}
+
+.navbar-nav .nav-item .dropdown-menu {
+    min-width: 250px;
+    overflow: hidden;
+
+}
+
+.navbar-nav .nav-item .dropdown-menu a:hover {
+    background-color: white;
+    color: #3489db;
+    opacity: 1;
+    transition-duration: 0.6s;
+    margin-left: 15px !important;
+    overflow: hidden !important;
+
+}
+
+.navbar-nav .nav-item a {
+    color: #212529 !important;
+}
+
+.navbar .dropdown-menu.fade-down {
+    top: 80%;
+    transform: rotateX(-75deg);
+    transform-origin: 0% 0%;
+}
+
+.navbar .dropdown-menu.fade-up {
+    top: 180%;
+}
+
+.navbar .nav-item:hover .dropdown-menu {
+    transition: 1s;
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+    transform: rotateX(0deg);
+}
+
+/* Navbar section end */
+
+.brand-name {
+    color: #565387 !important;
+}
+
+/* Donation section css */
+.donate_section_wrapper {
+    min-height: 200px;
+}
+
+.donate_section_wrapper button {
+    background: #565387;
+    border: 2px solid #565387;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50%;
+}
+
+.donate_section_wrapper button:hover {
+    color: #fff;
+    background-color: #635387;
+    transition: 0.5s;
+}
+
+/* end  donation section css */
+
+/* about us section css */
+.about_us_section {
+    height: auto;
+    min-height: 600px;
+    background-color: #f6f6f6;
+    text-align: justify;
+}
+
+.about_us_section h6 {
+    color: #565387;
+}
+
+.about_us_section h1 {
+    font-family: 'Coiny', cursive;
+    text-transform: capitalize;
+    font-size: 56px;
+}
+
+
+.about_us_section button {
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: transform 4s, filter 4s ease-in-out;
+    border: 2px solid #3489db;
+    text-decoration: none;
+    background: #3489db;
+    color: #fff;
+}
+
+.about_us_section button:hover {
+    background: #fff;
+    border: 2px solid #3489db;
+    color: #3489db;
+    text-decoration: underline;
+    transition: transform 4s, filter 4s ease-in-out;
+}
+
+
+.about_us_section .card_section {
+    width: 90%;
+    overflow: hidden;
+    padding-left: 0px;
+}
+
+.about_card {
+    cursor: pointer;
+    background-color: #f6f6f6;
+    border: 1px solid rgba(247, 240, 240, 0.2);
+}
+
+.about_us_section .about_card .card-body h5,
+h4,
+h2 {
+    font-family: 'Coiny', cursive;
+    /* font-family: 'Open Sans', sans-serif; */
+    text-transform: capitalize;
+}
+
+.about_card:hover {
+    background-color: #f6f6f6;
+    color: #565387;
+    text-decoration: underline;
+}
+
+.about_us_section img {
+    margin: 0px auto;
+    padding: 0px;
+    width: 50%;
+}
+
+.about_us_section h3 {
+    font-family: 'Coiny', cursive;
+    text-transform: capitalize;
+}
+
+
+
+/* end of about us section css */
+/* facts section */
+.fact_section {
+    background: #1e2436;
+    height: auto;
+    min-height: 200px;
+    color: #fff;
+}
+
+.fact_section h1 {
+    font-family: 'Coiny', cursive;
+    text-transform: capitalize;
+    margin-top: 70px;
+}
+
+.fact_section button {
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    display: inline-block;
+    padding: 50px 30px;
+    border-radius: 50%;
+    border: 2px solid #3489db;
+    text-decoration: none;
+    background: #3489db;
+    color: #fff;
+}
+
+.fact_section button:hover {
+    background-color: #347bdb;
+    border: 2px solid #347bdb;
+    color: #fff;
+    transition-duration: 0.5s;
+}
+
+/* ends of facts section */
+/* our causes */
+.our_causes_section {
+    height: auto;
+    min-height: 773px;
+}
+
+.our_causes_section h6 {
+    color: #565387;
+}
+
+.our_causes_section h1 {
+    font-family: 'Coiny', cursive;
+    text-transform: capitalize;
+}
+
+.our_causes_section .card_wrapper {
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+    transition-duration: 0.6s;
+}
+
+.our_causes_section .card_wrapper img {
+    height: 230px;
+}
+
+.card_wrapper button {
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    color: #565387;
+    border: 1px solid #565387;
+    text-transform: capitalize;
+}
+
+.our_causes_section .card_wrapper button:hover {
+    background: #565387;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.our_causes_section .card_wrapper h3:hover {
+    cursor: pointer;
+    color: #565387;
+}
+
+/* hover */
+.our_causes_section .card_wrapper:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+    transition-duration: 0.6s;
+}
+
+/* end of our causes */
+/* paralex section css */
+.paralex_section {
+    width: 100%;
+    color: white;
+}
+
+.inside {
+    margin: 0px auto;
+    text-align: justify;
+    height: auto;
+    min-height: 350px;
+}
+
+.paralex_section button {
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+    color: #fff;
+    border: 2px solid #fff;
+    text-decoration: none;
+}
+
+.paralex_section button:hover {
+    background: #3489db;
+    color: #fff;
+    border: 2px solid #3489db;
+}
+
+/* end of paralex section css */
+/* activitties section css */
+.activities_section {
+    height: auto;
+    min-height: 553px;
+    padding-top: 100px;
+    background-color: #f6f6f6;
+}
+
+.activities_section h5 {
+    color: #565387;
+}
+
+.activities_section h1 {
+    font-family: 'Coiny', cursive;
+}
+
+.activities_section iframe {
+    height: auto;
+    min-height: 350px;
+    width: 100%;
+}
+
+/* end activitties section css */
+/* Our program */
+.our_program_section {
+    height: auto;
+    min-height: 500px;
+}
+
+.our_program_section h1 {
+    font-family: 'Coiny', cursive;
+}
+
+.our_program_card_wrapper {
+    border: None;
+    cursor: pointer;
+    text-align: left;
+}
+
+.img_wrapper {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.our_program_card_wrapper .img_wrapper img {
+    transform-origin: 50% 65%;
+    transition: transform 4s, filter 3s ease-in-out;
+    filter: blur(0.5px);
+}
+
+.our_program_card_wrapper .img_wrapper img:hover {
+    transition: transform 4s, filter 3s ease-in-out;
+    transform: scale(1.3);
+    filter: blur(0);
+}
+
+.our_program_card_wrapper .card-body {
+    padding-left: 0px;
+}
+
+.our_program_card_wrapper h5 {
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+}
+
+.our_program_card_wrapper h5:hover {
+    color: #565387;
+}
+
+.our_program_card_wrapper img:hover {
+    transition-duration: 0.6s;
+}
+
+.our_program_card_wrapper button {
+    color: #565387;
+    padding-left: 0px;
+}
+
+.our_program_card_wrapper button:hover {
+    text-decoration: underline;
+}
+
+/* Our program end*/
+/* contribute css */
+.contribute_section {
+    padding-top: 100px;
+    height: auto;
+    min-height: 500px;
+    padding-top: 100px;
+    background-color: #f6f6f6;
+}
+
+
+.contribute_section h1 {
+    font-family: 'Coiny', cursive;
+    font-size: 52px;
+}
+
+.contribute_section button {
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+    /* color: #3489db; */
+    border: 2px solid #3489db;
+    text-decoration: none;
+    background: #3489db;
+    color: #fff;
+}
+
+.contribute_section button:hover {
+    background-color: #347bdb;
+    border: 2px solid #347bdb;
+    color: #fff;
+    text-decoration: underline;
+    transition-duration: 0.5s;
+}
+
+/* contribute css end*/
+
+/* Donar section */
+
+.donor_section .container-fluid {
+    margin-top: 80px !important;
+    height: auto;
+    min-height: 500px;
+}
+
+.card-header img {
+    border: 5px solid white !important
+}
+
+.outside {
+    position: inherit;
+    top: -50%
+}
+
+.donor_section .card {
+    border-radius: 20px !important;
+    box-shadow: 2px 2px 5px 0px #565387;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+    transition-duration: 0.6s;
+}
+
+.donor_section .card-header {
+    border-radius: 20px !important
+}
+
+.donor_section .heading h1 {
+    font-family: 'Coiny', cursive;
+    text-transform: capitalize;
+}
+
+.donor_section .card h5 {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: capitalize;
+}
+
+.profile-pic {
+    margin-bottom: -5px !important
+}
+
+.name {
+    margin-top: -50px !important
+}
+
+.donor_section h5 {
+    font-family: 'Coiny', cursive;
+}
+
+
+
+/* Footer section */
+.footer_section {
+    height: auto;
+    min-height: 300px;
+    background-color: #565387;
+    color: #fff;
+    margin-top: -73px;
+}
+
+.footer_section h4 {
+    font-family: 'Coiny', cursive;
+}
+
+.footer_section a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer_section a:hover {
+    color: #f6f6f6;
+}
+
+/* Footer section end*/

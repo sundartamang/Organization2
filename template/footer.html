@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<img src="{% static 'img/footer_wave.svg' %}" />
+<div class="footer_section px-5">
+    <div class="row">
+        <div class="col-lg-5 col-md-4 col-sm-12 pb-5 first_row">
+            <h4>About us</h4>
+            <p>‘Hamro Aama Samuha’ is distinctively a nonprofit service providing organization.
+                We provide food, shelter, education, health care and other different basic
+                aspects of life for these needy people.
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-12 pl-5 pb-5">
+            <h4>Site links</h4>
+            <a href="/">
+                <p class="font-weight-bold">Home</p>
+            </a>
+            <a href="{% url 'core:about-us' %}">
+                <p class="font-weight-bold">About us</p>
+            </a>
+            <a href="{% url 'core:gallery' %}">
+                <p class="font-weight-bold">Galliries</p>
+            </a>
+            <a href="{% url 'core:program-list' %}">
+                <p class="font-weight-bold">Programs</p>
+            </a>
+            <a href="{% url 'core:contribute' %}">
+                <p class="font-weight-bold">Contribute</p>
+            </a>
+            <a href="{% url 'core:contact-us' %}">
+                <p class="font-weight-bold">Contact</p>
+            </a>
+        </div>
+        <div class="col-lg-5 col-md-4 col-sm-12 pl-5 pb-5">
+            <h4>Have a question ?</h4>
+            <p>Samakoshi, Kathmandu Nepal</p>
+            <p>+977 9866545407</p>
+            <p>sundartamang6@gmail.com</p>
+        </div>
+    </div>
+    <h6 class="text-center pt-4">Technical Partner <b>ChemaHouse</b>.</h6>
+</div>

@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<div class="carasoul">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            {% for object in carosoulList %}
+            <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}" id="carousel-item-section">
+                <img src="{{object.image.url}}" class="d-block w-100 fluid carousel-img" alt="carasoul"
+                    style="height:700px">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="animate__animated  
+                        {% if forloop.counter0 == 0 %}animate__bounceInLeft{% endif %}
+                        {% if forloop.revcounter == 1 %}animate__zoomIn{% endif %}
+                        {% if forloop.revcounter == 2 %}animate__slideInDown{% endif %}
+                        ">
+                        {{object.title}}
+                    </h2>
+                    <h3 class="animate__animated 
+                    {% if forloop.counter0 == 0 %}animate__bounceInRight{% endif %}
+                    {% if forloop.revcounter == 1 %}animate__zoomIn{% endif %}
+                    {% if forloop.revcounter == 2 %}animate__slideInRight{% endif %}
+                    ">
+                        {{object.sub_title}}
+                    </h3>
+                    <a href="{% url 'core:contribute' %}">
+                        <button class="mt-2 animate__animated animate__zoomIn p-4 px-5 btn btn-donate font-weight-bold">
+                            Donate us
+                        </button>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+<div class="page_wraper">
+    <hr />
+    <div class="px-5 site_viewer">
+        <div class="px-5 pt-5">
+            <h4 class="font-weight-bold">Hamro Aama Samuha/Program/Program Detail</h4>
+        </div>
+    </div>
+    <div class="px-5 program_detail_wrapper">
+        <div class="row px-5">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <div class="card mt-5">
+                    <img class="card-img-top" src="{{object.image.url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title font-weight-bold">{{object.title}}</h4>
+                        <p class="card-text">
+                            {{object.content|safe}}
+                        </p>
+                        <p class="card-text"><small class="text-muted">Posted on {{object.timestamp_pretty}}</small></p>
+                        <hr />
+                        <h5 class="font-weight-bold">fallow us on</h5>
+                        <a href="https://www.facebook.com/profile.php?id=100008481586016">
+                            <img src="{% static 'img/facebook.png' %}" class="card-img" alt="facebbokIcon"
+                                style="height:35px; width:35px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About us section -->
+            {% block programDetailSidebar %}{% include 'programDetailSidebar.html' %}{% endblock %}
+            <!-- About us section end-->
+        </div>
+    </div>
+
+    {% endblock %}

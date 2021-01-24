@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+<div class="page_wraper">
+    <hr />
+    <div class="px-5 site_viewer">
+        <div class=" py-4">
+            <h4 class="font-weight-bold">Hamro Aama Samuha/Contribute us</h4>
+        </div>
+    </div>
+    <div class="px-5 contribute_wrapper pb-5">
+        <div class="row  mt-5">
+
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <h3 class="font-weight-bold pb-3">Bank's Information</h3>
+                {% for info in infoList %}
+                <p>Bank : <span class="font-weight-bold">{{info.bank_name}}</span></p>
+                <p>Bank : <span class="font-weight-bold">{{info.branch}}</span></p>
+                <p>Ac. No. : <span class="font-weight-bold">{{info.account_number}}</span></p>
+                <p>Ac. Name. : <span class="font-weight-bold">{{info.account_name}}</span></p>
+                {% endfor %}
+            </div>
+
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <h2>Donation form</h2>
+                <small class="text-danger font-weight-bold">* required field.</small>
+                <div class="container" style="width:430px;">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;"
+                        id="showmessage">
+                        <span class="font-weight-bold" id="showmessage"></span>
+                        <span area-hidden="true" class="close font-weight-bold" data-dismiss="alert" aria-label="close"
+                            style="cursor: pointer;">&times;</span>
+                    </div>
+                </div>
+                <form method="post" class="mt-4" id="donationForm">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                            <input class="form-control p-4" id="first_name" name="first_name" placeholder="First name*"
+                                type="text" required autofocus />
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                            <input class="form-control p-4" id="last_name" name="last_name" placeholder="Last name*"
+                                type="text" required autofocus />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                            <input class="form-control p-4" id="contact" name="contact" placeholder="Contact number *"
+                                type="number" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                            <input class="form-control p-4" id="email" name="email" placeholder="E-mail (if any)"
+                                type="text" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                            <input class="form-control p-4" id="amount" name="amount" placeholder="Amount deposited*"
+                                type="text" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                            <input class="form-control p-4" id="transcition_id" name="transcition_id"
+                                placeholder="Transition id*" type="text" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <textarea style="resize:vertical;" class="form-control p-4" placeholder="Message*..."
+                                rows="6" id="message" name="message" required></textarea>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn px-5 py-3 float-left">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    donationForm.addEventListener('submit', function (e) {
+        e.preventDefault()
+        console.log("I am working...")
+
+        $.ajax({
+            type: 'POST',
+            url: '/donation/',
+
+            data: {
+                first_name: $('#first_name').val(),
+                last_name: $('#last_name').val(),
+                contact: $('#contact').val(),
+                email: $('#email').val(),
+                amount: $('#amount').val(),
+                transcition_id: $('#transcition_id').val(),
+                message: $('#message').val(),
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+            },
+            success: function (data) {
+                if (data.status == 'ok') {
+                    $("#showmessage").text("Your message has been sent !")
+                    $("#showmessage").show()
+
+                    $("form")[0].reset();
+                } if (data.status == 'error') {
+                    $("#showmessage").text("Something went wrong, unable to send message !")
+                    $("#showmessage").show()
+                    console.log("Data is not save")
+                }
+            }
+
+        })
+
+    })
+</script>
+{% endblock %}

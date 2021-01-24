@@ -1,0 +1,28 @@
+{% load staticfiles %}
+{% block body %}
+<div class="col-lg-4 col-md-4 col-sm-6 side_program_detail_wrapper mt-5">
+    <div style="background-color: #fff !important;" class="w-100 p-3">
+        <h5 class="font-weight-bold">Our Latest programs</h5>
+        <hr />
+        {% for programs in page_obj%}
+        <div class="card mb-1" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="{{programs.image.url}}" class="card-img" alt="programImage">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <a href="{{programs.get_absoulate_url}}" style="text-decoration: none;">
+                            <h6 class="card-title text-dark font-weight-bold">
+                                {{programs.title}}
+                            </h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

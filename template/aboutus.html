@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+<div class="page_wraper pb-2">
+    <hr />
+    <div class="px-5 site_viewer">
+        <div class="py-4">
+            <h4 class="font-weight-bold">Hamro Aama Samuha/About us</h4>
+        </div>
+    </div>
+    <div class="about_us_wrapper">
+        {%for objects in aboutus %}
+        <div class="px-5 description">
+            <h6 class="font-weight-bold">About us</h6>
+            <h2 class="pb-4">{{objects.title}}</h2>
+            <p>
+                {{objects.content|safe}}
+            </p>
+            <div class="py-5">
+                <h3 class="text-center">Contact <b>Hamro Aama Samuha Now!</b></h3>
+                <div class="d-flex justify-content-center">
+                    <a href="{% url 'core:contact-us' %}">
+                        <button class="btn btn-default text-light font-weight-bold">Do it</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="px-5 row py-5 my-5">
+            <div class="col-lg-4 col-md-3 col-sm-12">
+                <h4 class="font-weight-bold">Our Mission</h4>
+                <p>
+                    {{objects.mission}}
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-3 col-sm-12">
+                <h4 class="font-weight-bold">Our Vision</h4>
+                <p>
+                    {{objects.vision}}
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-3 col-sm-12">
+                <h4 class="font-weight-bold">Our Objectives</h4>
+                <p>
+                    {{objects.objectives}}
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class=" py-5">
+    <div class="px-5 pt-4">
+        <h2 class="text-center font-weight-bold">Board members</h2>
+        <div class=" row justify-content-center px-5 ">
+            {% for members in member %}
+            <div class="col-lg-3 col-12 mt-5">
+                <div class="card mt-3">
+                    <div class="card-header bg-white text-center border-0 ">
+                        <div class="row justify-content-center ">
+                            <div class="col">
+                                <img class="align-self-center text-center rounded-circle outside img-fluid"
+                                    src="{{members.image.url}}" width="110" height="110">
+                            </div>
+                        </div>
+                        <div class="row text-center name p-3">
+                            <div class="col">
+                                <h5 class="mb-0 profile-pic p-2">{{members.name}}</h5>
+                                <small class="font-weight-bold">{{members.post}}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

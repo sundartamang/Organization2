@@ -1,0 +1,14 @@
+{% load staticfiles %}
+<div class="paralex_section w-100" style="background: url('{% static 'img/village.jpg' %}') fixed;">
+    <div class="inside w-75 py-5">
+        <blockquote class="blockquote text-center pt-5">
+            <h2 class="mb-0 font-weight-bold">"We can't help everyone, but everyone can help someone"</h2>
+            <footer class="blockquote-footer text-light p-3">Hamro Aama Samuha</footer>
+            <div class="d-flex justify-content-center">
+                <a href="{% url 'core:contribute' %}">
+                    <button class="btn btn-default px-4 py-4 px-5 mt-2 font-weight-bold">Donate us</button>
+                </a>
+            </div>
+        </blockquote>
+    </div>
+</div>

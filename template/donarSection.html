@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<div class="donor_section px-5 py-5">
+    <div class=" py-5 heading">
+        <h1 class="text-center font-weight-bold">LATEST DONATIONS</h1>
+    </div>
+    <div class=" row justify-content-center ">
+        {% for donors in page_obj3 %}
+        <div class="col-lg-4 col-12 mt-5">
+            <div class="card mt-3">
+                <div class="card-header bg-white text-center border-0 ">
+                    <div class="row justify-content-center ">
+                        <div class="col">
+                            <img class="align-self-center text-center rounded-circle outside img-fluid"
+                                src="{{donors.image.url}}" width="110" height="110">
+                        </div>
+                    </div>
+                    <div class="row text-center name p-3">
+                        <div class="col">
+                            <h5 class="mb-0 profile-pic p-2 font-weight-bold">{{donors.name}}</h5>
+                            <small class="font-weight-bold">{{donors.post}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
